@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>CGPA Calculator</h1>
+            <p>UGC Uniform Grading System • 4.00 Scale</p>
+        </div>
+
+        <div class="table-header">
+            <div>Subject Name</div>
+            <div>Credit</div>
+            <div>GPA</div>
+            <div>Action</div>
+        </div>
+
+        <div id="subjects">
+
+            <div class="subject-row">
+
+                <input
+                    type="text"
+                    class="subject"
+                    placeholder="Subject Name"
+                >
+
+                <input
+                    type="number"
+                    class="credit"
+                    placeholder="Credit"
+                    min="0.5"
+                    step="0.5"
+                >
+
+                <input
+                    type="number"
+                    class="gpa"
+                    placeholder="GPA"
+                    min="0"
+                    max="4"
+                    step="0.01"
+                >
+
+                <button
+                    class="remove-btn"
+                    onclick="removeSubject(this)"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            class="add-btn"
+            onclick="addSubject()"
+        >
+            + Add Subject
+        </button>
+
+        <button
+            class="calculate-btn"
+            onclick="calculateCGPA()"
+        >
+            Calculate CGPA
+        </button>
+
+        <button
+            class="reset-btn"
+            onclick="resetCalculator()"
+        >
+            Reset
+        </button>
+
+        <div id="message" class="message"></div>
+
+        <div class="result-box">
+
+            <div class="result-row">
+                <span>Total Credits</span>
+                <strong id="totalCredits">0.00</strong>
+            </div>
+
+            <div class="result-row">
+                <span>Total Grade Points</span>
+                <strong id="totalPoints">0.00</strong>
+            </div>
+
+            <div class="cgpa-result">
+                <span>Your CGPA</span>
+                <strong id="cgpaResult">0.00</strong>
+            </div>
+
+        </div>
+
+        <div class="grading-system">
+
+            <h2>UGC Uniform Grading System</h2>
+
+            <div class="grading-table-wrapper">
+
+                <table class="grading-table">
+
+                    <thead>
+                        <tr>
+                            <th>Marks (%)</th>
+                            <th>Grade</th>
+                            <th>Grade Point</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>80–100</td>
+                            <td>A+</td>
+                            <td>4.00</td>
+                            <td>Outstanding</td>
+                        </tr>
+
+                        <tr>
+                            <td>75–79</td>
+                            <td>A</td>
+                            <td>3.75</td>
+                            <td>Excellent</td>
+                        </tr>
+
+                        <tr>
+                            <td>70–74</td>
+                            <td>A−</td>
+                            <td>3.50</td>
+                            <td>Very Good</td>
+                        </tr>
+
+                        <tr>
+                            <td>65–69</td>
+                            <td>B+</td>
+                            <td>3.25</td>
+                            <td>Good</td>
+                        </tr>
+
+                        <tr>
+                            <td>60–64</td>
+                            <td>B</td>
+                            <td>3.00</td>
+                            <td>Satisfactory</td>
+                        </tr>
+
+                        <tr>
+                            <td>55–59</td>
+                            <td>B−</td>
+                            <td>2.75</td>
+                            <td>Above Average</td>
+                        </tr>
+
+                        <tr>
+                            <td>50–54</td>
+                            <td>C+</td>
+                            <td>2.50</td>
+                            <td>Average</td>
+                        </tr>
+
+                        <tr>
+                            <td>45–49</td>
+                            <td>C</td>
+                            <td>2.25</td>
+                            <td>Below Average</td>
+                        </tr>
+
+                        <tr>
+                            <td>40–44</td>
+                            <td>D</td>
+                            <td>2.00</td>
+                            <td>Pass</td>
+                        </tr>
+
+                        <tr>
+                            <td>00–39</td>
+                            <td>F</td>
+                            <td>0.00</td>
+                            <td>Fail</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="formula-box">
+            <h3>CGPA Formula</h3>
+            <p>CGPA = Σ (Credit × GPA) ÷ Σ Credit</p>
+        </div>
+
+        <footer>
+            Student CGPA Calculator
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

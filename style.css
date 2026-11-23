@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #777;
+    font-size: 15px;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 70px;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.subject-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 70px;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.subject-row input {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.subject-row input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.remove-btn {
+    width: 70px;
+    height: 48px;
+    background: #ef4444;
+    color: white;
+    font-size: 24px;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    background: #48bb78;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: #38a169;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: #667eea;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.calculate-btn:hover {
+    background: #5a67d8;
+    transform: translateY(-1px);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background: #f1f5f9;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reset-btn:hover {
+    background: #e2e8f0;
+}
+
+.message {
+    min-height: 22px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.result-box {
+    margin-top: 10px;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #555;
+}
+
+.result-row strong {
+    color: #333;
+}
+
+.cgpa-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #eef2ff;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cgpa-result strong {
+    font-size: 32px;
+    color: #667eea;
+}
+
+.grading-system {
+    margin-top: 30px;
+    padding: 0;
+}
+
+.grading-system h2 {
+    font-size: 21px;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.grading-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.grading-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 15px;
+}
+
+.grading-table th {
+    text-align: left;
+    padding: 14px;
+    color: #222;
+    font-weight: bold;
+    border-bottom: 1px solid #222;
+}
+
+.grading-table td {
+    padding: 14px;
+    color: #222;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.grading-table tbody tr:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+.grading-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.grading-table tbody tr:hover {
+    background: #e8edff;
+}
+
+.formula-box {
+    margin-top: 25px;
+    padding: 18px;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.formula-box h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.formula-box p {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #999;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .container {
+        margin-top: 20px;
+        padding: 22px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .subject-row {
+        grid-template-columns: 1fr 1fr;
+        padding: 15px;
+        background: #f8fafc;
+        border-radius: 10px;
+    }
+
+    .subject-row .subject {
+        grid-column: 1 / 3;
+    }
+
+    .subject-row .remove-btn {
+        width: 100%;
+    }
+
+    .grading-table {
+        min-width: 600px;
+    }
+
+    .cgpa-result {
+        font-size: 17px;
+    }
+
+    .cgpa-result strong {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 16px;
+    }
+}
